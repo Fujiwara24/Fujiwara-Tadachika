@@ -48,7 +48,7 @@
 
 ---
 
-## ⚡ Ene-1 Challenge
+## Ene-1 Challenge
 
 - 活動紹介（LinkedIn）  
   https://www.linkedin.com/posts/%E5%8C%A1%E5%8A%9B-%E8%97%A4%E5%8E%9F-551a15338_ene-1-motegi-gp-2024-activity-7263208436304142336-X2-j/
