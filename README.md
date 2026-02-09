@@ -1,4 +1,4 @@
-# Fujiwara-Tadachika　(藤原　匡力)
+# 藤原　匡力　(Fujiwara Tadachika)
 
 # LinkedIn (公式)
 https://www.linkedin.com/in/tadachika-fujiwara/
