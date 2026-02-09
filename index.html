@@ -4,13 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fujiwara Tadachika | Research & Engineering</title>
+
+  <!-- LinkedIn Profile Badge -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
   <style>
     :root {
-      --bg: #0f172a;        /* slate-900 */
-      --card: #020617;      /* slate-950 */
-      --text: #e5e7eb;      /* gray-200 */
-      --sub: #94a3b8;       /* slate-400 */
-      --accent: #38bdf8;    /* sky-400 */
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --sub: #94a3b8;
+      --accent: #38bdf8;
     }
 
     * { box-sizing: border-box; }
@@ -23,46 +27,16 @@
       line-height: 1.7;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
-    }
+    .container { max-width: 960px; margin: 0 auto; padding: 64px 24px; }
+    header { margin-bottom: 80px; }
+    header h1 { font-size: 2.6rem; margin: 0 0 8px 0; }
+    header p { color: var(--sub); font-size: 1.1rem; max-width: 720px; }
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 64px 24px;
-    }
-
-    header {
-      margin-bottom: 80px;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin: 0 0 8px 0;
-    }
-
-    header p {
-      color: var(--sub);
-      font-size: 1.1rem;
-      max-width: 720px;
-    }
-
-    section {
-      margin-bottom: 72px;
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 24px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
+    section { margin-bottom: 72px; }
+    section h2 { font-size: 1.8rem; margin-bottom: 24px; border-left: 4px solid var(--accent); padding-left: 12px; }
 
     .card {
       background: rgba(2, 6, 23, 0.8);
@@ -72,38 +46,42 @@
       margin-bottom: 24px;
     }
 
-    ul {
-      padding-left: 20px;
-    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
 
-    li {
-      margin-bottom: 8px;
-    }
+    .links a { display: inline-block; margin-right: 16px; margin-bottom: 8px; }
 
-    .links a {
-      display: inline-block;
-      margin-right: 16px;
-      margin-bottom: 8px;
-    }
+    .linkedin-badge-wrapper { margin-top: 24px; }
 
-    footer {
-      text-align: center;
-      color: var(--sub);
-      font-size: 0.9rem;
-      margin-top: 80px;
-    }
+    footer { text-align: center; color: var(--sub); font-size: 0.9rem; margin-top: 80px; }
   </style>
 </head>
 <body>
   <div class="container">
 
     <header>
-      <h1>藤原 匡力 / Fujiwara Tadachika</h1>
-      <p>
-        Electrical & Software Engineer / Computer Vision Researcher<br />
-        Student Formula EV, Fisheye Vision, 3D Perception
-      </p>
-    </header>
+  <h1>藤原 匡力 / Fujiwara Tadachika</h1>
+  <p>
+    電気・ソフトウェア領域を横断して取り組んできた学生エンジニア。<br />
+    学生フォーミュラEV、画像処理研究、自律移動ロボットなど<br />
+    <b>「実機を動かす」経験を軸に活動</b>しています。
+  </p>
+
+  <div class="linkedin-badge-wrapper">
+    <div class="badge-base LI-profile-badge"
+      data-locale="ja_JP"
+      data-size="medium"
+      data-theme="dark"
+      data-type="VERTICAL"
+      data-vanity="tadachika-fujiwara"
+      data-version="v1">
+      <a class="badge-base__link LI-simple-link"
+         href="https://jp.linkedin.com/in/tadachika-fujiwara?trk=profile-badge">
+        藤原 匡力
+      </a>
+    </div>
+  </div>
+</header>
 
     <section>
       <h2>Research</h2>
@@ -134,13 +112,27 @@
     </section>
 
     <section>
-      <h2>Links</h2>
-      <div class="card links">
-        <a href="https://www.linkedin.com/in/tadachika-fujiwara/" target="_blank">LinkedIn</a>
-        <a href="https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/" target="_blank">Facebook</a>
-        <a href="https://fujiwara24.github.io/Fujiwara-Tadachika/" target="_blank">GitHub Pages</a>
-      </div>
-    </section>
+  <h2>🔗 External Links</h2>
+  <div class="card links">
+    <p><b>LinkedIn（公式）</b><br />
+      <a href="https://www.linkedin.com/in/tadachika-fujiwara/" target="_blank">
+        https://www.linkedin.com/in/tadachika-fujiwara/
+      </a>
+    </p>
+
+    <p><b>Facebook</b><br />
+      公式アカウント：<br />
+      <a href="https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/" target="_blank">
+        https://www.facebook.com/people/藤原-匡力
+      </a><br /><br />
+
+      サブアカウント：<br />
+      <a href="https://www.facebook.com/p/%E8%97%A4%E5%8E%9F-%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%8B-%E5%8C%A1%E5%8A%9B-100024113926732/" target="_blank">
+        https://www.facebook.com/p/藤原-ただちか-匡力
+      </a>
+    </p>
+  </div>
+</section>
 
     <footer>
       © 2026 Fujiwara Tadachika
