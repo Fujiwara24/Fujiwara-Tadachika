@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fujiwara24.github.io/Fujiwara-Tadachika/sitemap.xml
