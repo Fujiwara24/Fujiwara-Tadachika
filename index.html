@@ -1,197 +1,343 @@
+ご提示いただいた2つのコードを統合し、人物情報や構造化データ、LinkedInのグローバルURLなどの重要な要素をすべて維持した完成版のHTMLコードです。
+
+情報の欠落がないよう、研究内容、学生フォーミュラの軌跡、テレメトリシステム、各年度の活動リンク、参加プロジェクト、外部リンクのすべてを整理して盛り込んでいます。
+
+```html
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>藤原匡力 | Tadachika Fujiwara | Research & Engineering</title>
+  <title>藤原 匡力 | Tadachika Fujiwara | Research & Engineering</title>
 
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Person",
- "name": "藤原匡力",
- "alternateName": "Tadachika Fujiwara",
- "url": "https://fujiwara24.github.io/Fujiwara-Tadachika/",
- "sameAs": [
-  "https://www.linkedin.com/in/tadachika-fujiwara/",
-  "https://github.com/fujiwara24",
-  "https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/",
-  "https://www.facebook.com/p/%E8%97%A4%E5%8E%9F-%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%8B-%E5%8C%A1%E5%8A%9B-100024113926732/"
- ]
-}
-</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "藤原匡力",
+      "alternateName": "Tadachika Fujiwara",
+      "url": "https://fujiwara24.github.io/Fujiwara-Tadachika/",
+      "sameAs": [
+        "https://www.linkedin.com/in/tadachika-fujiwara/",
+        "https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/",
+        "https://www.facebook.com/p/%E8%97%A4%E5%8E%9F-%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%8B-%E5%8C%A1%E5%8A%9B-100024113926732/"
+      ]
+    }
+  </script>
 
-<style>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --text: #e5e7eb;
+      --sub: #94a3b8;
+      --accent: #38bdf8;
+    }
 
-:root {
---bg:#0f172a;
---card:#020617;
---text:#e5e7eb;
---sub:#94a3b8;
---accent:#38bdf8;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-*{box-sizing:border-box;}
+    body {
+      margin: 0;
+      font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(180deg, #020617, #0f172a);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-body{
-margin:0;
-font-family:"Inter","Helvetica Neue",Arial,sans-serif;
-background:linear-gradient(180deg,#020617,#0f172a);
-color:var(--text);
-line-height:1.7;
-}
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-a{color:var(--accent);text-decoration:none;}
-a:hover{text-decoration:underline;}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.container{max-width:960px;margin:0 auto;padding:64px 24px;}
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
 
-header{margin-bottom:80px;}
+    header {
+      margin-bottom: 80px;
+    }
 
-header h1{
-font-size:2.6rem;
-margin:0 0 8px 0;
-}
+    header h1 {
+      font-size: 2.6rem;
+      margin: 0 0 8px 0;
+    }
 
-header p{
-color:var(--sub);
-font-size:1.1rem;
-max-width:720px;
-}
+    header p {
+      color: var(--sub);
+      font-size: 1.1rem;
+      max-width: 720px;
+    }
 
-section{margin-bottom:72px;}
+    section {
+      margin-bottom: 72px;
+    }
 
-section h2{
-font-size:1.8rem;
-margin-bottom:24px;
-border-left:4px solid var(--accent);
-padding-left:12px;
-}
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+    }
 
-.card{
-background:rgba(2,6,23,0.8);
-border:1px solid rgba(148,163,184,0.15);
-border-radius:16px;
-padding:32px;
-margin-bottom:24px;
-}
+    .card {
+      background: rgba(2, 6, 23, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
 
-ul{padding-left:20px;}
-li{margin-bottom:8px;}
+    h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
 
-.links a{
-display:inline-block;
-margin-right:16px;
-margin-bottom:8px;
-}
+    h4 {
+      margin-bottom: 8px;
+      color: var(--text);
+    }
 
-.linkedin-badge-wrapper{
-margin-top:24px;
-}
+    ul {
+      padding-left: 20px;
+    }
 
-footer{
-text-align:center;
-color:var(--sub);
-font-size:0.9rem;
-margin-top:80px;
-}
+    li {
+      margin-bottom: 8px;
+    }
 
-</style>
+    .links a {
+      display: inline-block;
+      margin-right: 16px;
+      margin-bottom: 8px;
+    }
+
+    .linkedin-badge-wrapper {
+      margin-top: 24px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--sub);
+      font-size: 0.9rem;
+      margin-top: 80px;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-<header>
+    <header>
+      <h1>藤原 匡力 / Fujiwara Tadachika</h1>
+      <p>
+        電気・ソフトウェア領域を横断して取り組んできた学生エンジニア。<br />
+        学生フォーミュラEV、画像処理研究、自律移動ロボットなど<br />
+        <b>「実機を動かす」経験を軸に活動</b>しています。
+      </p>
 
-<h1>藤原 匡力 / Fujiwara Tadachika</h1>
+      <div class="linkedin-badge-wrapper">
+        <div class="badge-base LI-profile-badge" data-locale="ja_JP" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="tadachika-fujiwara" data-version="v1">
+          <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/tadachika-fujiwara/">
+            藤原 匡力
+          </a>
+        </div>
+      </div>
+    </header>
 
-<p>
-電気・ソフトウェア領域を横断して取り組んできた学生エンジニア。<br>
-学生フォーミュラEV、画像処理研究、自律移動ロボットなど<br>
-<b>「実機を動かす」経験を軸に活動</b>しています。
-</p>
+    <section>
+      <h2>Research</h2>
+      <div class="card">
+        <h3>複数魚眼カメラによる全周囲3次元映像生成</h3>
+        <p>
+          本研究では、複数の魚眼カメラ映像を統合し、全周囲を三次元的に把握可能な映像生成手法を研究している。
+          完全自動運転や遠隔操縦を想定し、操縦者が車両周囲の状況を直感的に把握できる視覚提示の実現を目的とする。
+          魚眼カメラは単一カメラで広範囲を撮影できる一方、強い歪みやカメラ間の視差により、映像接続や距離認識が困難となる。
+        </p>
+        <p>
+          本研究では、魚眼レンズの内部パラメータを高精度に校正し、画素情報から実世界の方位角を正確に取得可能な基盤を構築した。
+          遠方背景については無限遠連結を用いることで、安定した360度パノラマ映像を生成する。
+          一方、近傍物体に対しては、カメラ間で生じる視差を距離情報として積極的に活用し、外部センサを用いずに距離推定を行う。
+          推定された距離情報はVR空間内に再投影され、立体的な映像提示を可能とする。
+        </p>
+        <ul>
+          <li>無限遠連結による安定した360度パノラマ生成</li>
+          <li>複数魚眼カメラの視差を用いた外部センサ不要の距離推定</li>
+          <li>安価な魚眼レンズに対応した高精度歪み補正</li>
+        </ul>
+      </div>
+    </section>
 
-<div class="linkedin-badge-wrapper">
+    <section>
+      <h2>学生フォーミュラ｜取り組みの軌跡</h2>
+      <div class="card">
+        <p>
+          学生フォーミュラでは、EV車両の電気システムを中心に、
+          <b>「実機を確実に走らせること」</b>を最優先に取り組んできました。
+          単なる設計に留まらず、トラブル対応・実装・検証まで一貫して担当しています。
+        </p>
 
-<div class="badge-base LI-profile-badge"
-data-locale="ja_JP"
-data-size="medium"
-data-theme="dark"
-data-type="VERTICAL"
-data-vanity="tadachika-fujiwara"
-data-version="v1">
+        <h3>2024年｜EVクラスでの初走行達成</h3>
+        <ul>
+          <li>チームとしてEVクラス初のマシン走行を達成</li>
+          <li>インバータ・モータ制御系を含む車両電気システム全体を担当</li>
+          <li>CAN通信によるトルク指令・状態監視の設計と実装</li>
+          <li>実走行試験における不具合切り分けと即時修正を主導</li>
+        </ul>
 
-<a class="badge-base__link LI-simple-link"
-href="https://www.linkedin.com/in/tadachika-fujiwara/">
-藤原 匡力
-</a>
+        <h3>担当領域・技術要素</h3>
+        <ul>
+          <li>高電圧系・低電圧系を含む車両電気アーキテクチャ設計</li>
+          <li>インバータ・モータ制御（CAN通信）</li>
+          <li>センサ・ECU間通信の設計とデバッグ</li>
+          <li>走行試験を通じたシステム全体の信頼性向上</li>
+        </ul>
 
-</div>
-</div>
+        <p>
+          「理論上は正しい」ではなく、
+          <b>「現場で確実に動くか」</b>を基準に判断する姿勢は、
+          その後の研究・ロボット開発・テレメトリシステム構築にも一貫して活きています。
+        </p>
+      </div>
+    </section>
 
-</header>
+    <section>
+      <h2>🛰 リアルタイム・レーシングテレメトリ</h2>
+      <div class="card">
+        <h3>リアルタイム・レーシングテレメトリシステムの構築</h3>
+        <p style="font-style: italic; color: #94a3b8;">
+          見えないデータを武器に変え、レース戦略を革新する――
+        </p>
+        <p>
+          自作ハードウェアとAWSクラウドを融合させ、リアルタイム・レーシングテレメトリシステムを独自開発しました。
+          ESP32をコアとしたエッジデバイスから、走行中の車両より取得した
+          電圧・電流・GNSS・速度・9軸IMUといったデータを、エッジ処理を行いながらリアルタイムにAWSへ転送しています。
+        </p>
+        <p>
+          FreeRTOSによるマルチタスク制御により、センサデータ収集と通信処理を並列化し、高負荷環境下でもデータ欠損のない堅牢な通信を実現しました。
+          バックエンドにはLambda・DynamoDBを用いたサーバーレスアーキテクチャを採用し、WebSocketを介してWebフロントエンドへ即時配信しています。
+        </p>
+        <p>
+          さらに、送信された全データはクラウドストレージへ自動アーカイブされ、レース終了直後からMatlabやExcelによる走行後解析が可能です。
+          リアルタイム監視と解析を両立することで、次戦のセッティングへ即座にフィードバックできる「チームとマシンをリアルタイムでつなぐシステム」を実現しました。
+        </p>
+        <ul>
+          <li>ESP32 + FreeRTOS によるエッジ処理・リアルタイム通信</li>
+          <li>AWS Lambda / DynamoDB を用いたサーバーレス構成</li>
+          <li>WebSocket によるミリ秒オーダーのデータ可視化</li>
+          <li>走行データの自動アーカイブと即時解析環境</li>
+        </ul>
+      </div>
+    </section>
 
-<section>
+    <section>
+      <h2>🏎 学生フォーミュラ / Ene-1 Challenge 詳細資料</h2>
+      <div class="card">
+        <h3>🏎 学生フォーミュラ日本大会（FSAE Japan）</h3>
+        
+        <h4>2025年</h4>
+        <ul>
+          <li>大会プログラム：<br />
+            <a href="https://www.jsae.or.jp/files_publish/page/258/2025FSAEJ_Program.pdf" target="_blank">2025FSAEJ_Program.pdf</a>
+          </li>
+        </ul>
 
-<h2>Research</h2>
+        <h4>2024年</h4>
+        <ul>
+          <li>大会公式資料：<br />
+            <a href="https://digitalbook.jsae.or.jp/library/books/fsaej2024/book/#target/page_no=60" target="_blank">大会公式ダイジェスト（P.60）</a>
+          </li>
+          <li>活動紹介（LinkedIn）：<br />
+            <a href="https://www.linkedin.com/posts/%E5%8C%A1%E5%8A%9B-%E8%97%A4%E5%8E%9F-551a15338_%E5%AD%A6%E7%94%9F%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9F%E3%83%A5%E3%83%A9%E6%97%A5%E6%9C%AC%E5%A4%A7%E4%BC%9A2024-%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%E9%9B%BB%E6%B0%97%E5%9B%9E%E8%B7%AF%E3%82%A2%E3%83%8A%E3%83%AD%E3%82%B0%E5%9B%9E%E8%B7%AF%E3%82%92%E8%A8%AD%E8%A8%88-%E3%83%87%E3%83%B3%E3%82%BD%E3%83%BC-activity-7263207222464135168-WY6K/" target="_blank">LinkedIn 投稿：電気回路設計について</a>
+          </li>
+          <li>活動紹介（Facebook）：<br />
+            <a href="https://www.facebook.com/100013453424845/posts/2047746635683764/" target="_blank">Facebook 投稿を見る</a>
+          </li>
+        </ul>
 
-<div class="card">
+        <h4>2023年</h4>
+        <ul>
+          <li>大会プログラム：<br />
+            <a href="https://www.jsae.or.jp/files_publish/news/2077/program.pdf" target="_blank">2023FSAEJ_Program.pdf</a>
+          </li>
+          <li>チーム公式サイト：<br />
+            <a href="https://sites.google.com/view/ait-krt/project/ait-23" target="_blank">AIT-KRT Project AIT-23</a>
+          </li>
+        </ul>
 
-<h3>複数魚眼カメラによる全周囲3次元映像生成</h3>
+        <h3 style="margin-top: 32px;">🔋 Ene-1 Challenge</h3>
+        <ul>
+          <li>活動紹介（LinkedIn）：<br />
+            <a href="https://www.linkedin.com/posts/%E5%8C%A1%E5%8A%9B-%E8%97%A4%E5%8E%9F-551a15338_ene-1-motegi-gp-2024-activity-7263208436304142336-X2-j/" target="_blank">LinkedIn 投稿：Ene-1 MOTEGI GP 2024</a>
+          </li>
+          <li>大会資料：<br />
+            <a href="https://apps.mobilityland.co.jp/info/download/6JY_JW/135210" target="_blank">大会公式結果・リザルト</a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-<p>
-本研究では、複数の魚眼カメラ映像を統合し、全周囲を三次元的に把握可能な映像生成手法を研究している。
-完全自動運転や遠隔操縦を想定し、操縦者が車両周囲の状況を直感的に把握できる視覚提示の実現を目的とする。
-魚眼カメラは単一カメラで広範囲を撮影できる一方、強い歪みやカメラ間の視差により、映像接続や距離認識が困難となる。
-本研究では、魚眼レンズの内部パラメータを高精度に校正し、画素情報から実世界の方位角を正確に取得可能な基盤を構築した。
-遠方背景については無限遠連結を用いることで、安定した360度パノラマ映像を生成する。
-一方、近傍物体に対しては、カメラ間で生じる視差を距離情報として積極的に活用し、外部センサを用いずに距離推定を行う。
-推定された距離情報はVR空間内に再投影され、立体的な映像提示を可能とする。
-</p>
+    <section>
+      <h2>📌 参加プロジェクト</h2>
+      <div class="card">
+        <ul>
+          <li>
+            <b>学生フォーミュラ日本大会（FSAE Japan）</b><br />
+            <a href="https://www.jsae.or.jp/formula/" target="_blank">大会公式サイト</a>
+          </li>
+          <li>
+            <b>Ene-1 Challenge（Suzuka / Motegi）</b><br />
+            <a href="https://sites.google.com/view/aitepwebsite2025/%E3%83%9B%E3%83%BC%E3%83%A0?authuser=2" target="_blank">プロジェクト公式サイト</a>
+          </li>
+          <li>
+            <b>白浜ソーラーカーチャレンジ</b><br />
+            <a href="https://sites.google.com/view/aitsolarcarproject/%E3%83%9B%E3%83%BC%E3%83%A0?authuser=0" target="_blank">プロジェクト公式サイト</a>
+          </li>
+          <li>
+            <b>つくばチャレンジ（自律移動ロボット）</b><br />
+            <a href="https://tsukubachallenge.jp/2025/" target="_blank">大会公式サイト</a>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-</div>
-</section>
+    <section>
+      <h2>🔗 External Links</h2>
+      <div class="card links">
+        <p>
+          <b>LinkedIn（公式）</b><br />
+          <a href="https://www.linkedin.com/in/tadachika-fujiwara/" target="_blank">https://www.linkedin.com/in/tadachika-fujiwara/</a>
+        </p>
+        <p>
+          <b>Facebook</b><br />
+          メインアカウント：<br />
+          <a href="https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/" target="_blank">藤原 匡力</a><br /><br />
+          サブアカウント：<br />
+          <a href="https://www.facebook.com/p/%E8%97%A4%E5%8E%9F-%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%8B-%E5%8C%A1%E5%8A%9B-100024113926732/" target="_blank">藤原 ただちか 匡力</a>
+        </p>
+      </div>
+    </section>
 
-<section>
+    <footer>
+      © 2026 Fujiwara Tadachika
+    </footer>
 
-<h2>External Links</h2>
-
-<div class="card links">
-
-<p><b>LinkedIn</b><br>
-<a href="https://www.linkedin.com/in/tadachika-fujiwara/" target="_blank">
-LinkedIn Profile
-</a></p>
-
-<p><b>GitHub</b><br>
-<a href="https://github.com/fujiwara24" target="_blank">
-GitHub
-</a></p>
-
-<p><b>Facebook (Main)</b><br>
-<a href="https://www.facebook.com/people/%E8%97%A4%E5%8E%9F-%E5%8C%A1%E5%8A%9B/100013453424845/" target="_blank">
-Facebook Main
-</a></p>
-
-<p><b>Facebook (Sub)</b><br>
-<a href="https://www.facebook.com/p/%E8%97%A4%E5%8E%9F-%E3%81%9F%E3%81%A0%E3%81%A1%E3%81%8B-%E5%8C%A1%E5%8A%9B-100024113926732/" target="_blank">
-Facebook Sub
-</a></p>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Fujiwara Tadachika
-</footer>
-
-</div>
+  </div>
 
 </body>
+
 </html>
+
+```
